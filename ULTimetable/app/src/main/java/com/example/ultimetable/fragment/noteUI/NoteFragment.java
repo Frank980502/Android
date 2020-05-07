@@ -62,7 +62,7 @@ public class NoteFragment extends Fragment {
                 }else{
                     maxId="Note0";
                 }
-                bundle.putInt("Type",1);//1 代表 ADD
+                bundle.putInt("Type",1);// ADD
                 bundle.putString("MaxId",maxId);
                 Navigation.findNavController(v).navigate(R.id.action_nav_note_to_edit_note,bundle);
             }

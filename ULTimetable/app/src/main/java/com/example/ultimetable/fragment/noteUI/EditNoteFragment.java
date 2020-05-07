@@ -103,12 +103,7 @@ public class EditNoteFragment extends Fragment {
                     note2=new Note(newId,binding.title.getText().toString(),binding.description.getText().toString(),binding.reminderDate.getText().toString(),false);
                     if(binding.reminderSwitch.isChecked()) note2.setState(true);
                     db.collection("Student").document(Objects.requireNonNull(user.getEmail()).split("@")[0]).collection("Note").document(newId)
-                            .set(note2)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                }
-                            });
+                            .set(note2);
 
                     @SuppressLint("SimpleDateFormat")
                     final SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy HH:mm");
@@ -187,7 +182,7 @@ public class EditNoteFragment extends Fragment {
                     if(note.getRd()!=null && !note.getRd().equals("")){
                         binding.reminderSwitch.setChecked(true);
                     }else {
-                        DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(getActivity()),
+                        DatePickerDialog datePickerDialog = new DatePickerDialog(requireActivity(),
                                 new DatePickerDialog.OnDateSetListener() {
                                     @Override
                                     public void onDateSet(DatePicker view, int y, int m, int d) {
@@ -248,7 +243,7 @@ public class EditNoteFragment extends Fragment {
                     newHour=Integer.parseInt(note.getRd().split(" ")[1].split(":")[0]);
                     newMinute=Integer.parseInt(note.getRd().split(" ")[1].split(":")[1]);
                 }
-                DatePickerDialog datePickerDialog = new DatePickerDialog(Objects.requireNonNull(getActivity()),
+                DatePickerDialog datePickerDialog = new DatePickerDialog(requireActivity(),
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int y, int m, int d) {

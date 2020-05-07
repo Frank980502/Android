@@ -67,11 +67,11 @@ public class ModuleFragment extends Fragment {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 courseIdList.add(document.getId());
                             }
-                            ArrayAdapter<String> courseIdAdapter=new ArrayAdapter<>(getContext(),R.layout.support_simple_spinner_dropdown_item,courseIdList);
+                            ArrayAdapter<String> courseIdAdapter=new ArrayAdapter<>(requireActivity(),R.layout.support_simple_spinner_dropdown_item,courseIdList);
                             sp1.setAdapter(courseIdAdapter);
                             sp1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                                 @Override
-                                public void onItemSelected(AdapterView<?> parent, View view, final int position, long id) {
+                                public void onItemSelected(AdapterView<?> parent, View view, final int position, final long id) {
                                     if(!courseIdList.get(position).equals("NULL")) {
                                         db.collection("Student")
                                                 .document(Objects.requireNonNull(user.getEmail()).split("@")[0])
@@ -83,6 +83,7 @@ public class ModuleFragment extends Fragment {
                                                         assert student != null;
                                                         List<String> newModuleList = student.getStudentModule();
                                                         if(!newModuleList.contains(courseIdList.get(position))) {
+                                                            //add
                                                             newModuleList.add(courseIdList.get(position));
                                                             student.setStudentModule(newModuleList);
                                                             db.collection("Student")
@@ -93,8 +94,8 @@ public class ModuleFragment extends Fragment {
                                                             loadCourseData(courseIdList.get(position),"Wednesday");
                                                             loadCourseData(courseIdList.get(position),"Thursday");
                                                             loadCourseData(courseIdList.get(position),"Friday");
-
                                                             update(tv);
+                                                            Toast.makeText(getContext(),"Add successfully!",Toast.LENGTH_LONG).show();
                                                         }else{
                                                             Toast.makeText(getContext(),"You have chosen this module!",Toast.LENGTH_LONG).show();
                                                         }
@@ -130,6 +131,7 @@ public class ModuleFragment extends Fragment {
                                                                     .document(Objects.requireNonNull(user.getEmail()).split("@")[0])
                                                                     .set(student);
                                                             update(tv);
+                                                            Toast.makeText(getContext(),"Delete successfully!",Toast.LENGTH_LONG).show();
                                                         }else{
                                                             Toast.makeText(getContext(),"You don't choose this module!",Toast.LENGTH_LONG).show();
                                                         }

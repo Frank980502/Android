@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private FirebaseFirestore db;
     private FirebaseUser user;
-    private Boolean flag;
+    private Boolean flag=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,44 +176,4 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-   /* public void alarm(){
-        final List<String> reminderList=new ArrayList<>();
-        @SuppressLint("SimpleDateFormat") final SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy HH:mm");
-        db.collection("Student")
-                .document(user.getEmail().split("@")[0])
-                .collection("Note")
-                .whereEqualTo("state", true)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            int request=0;
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                if(document.getString("rd") != null && document.getString("rd")!=""){
-                                    reminderList.add(document.getString("rd"));
-                                }
-                            }
-                            for(int i=0;i<reminderList.size();i++){
-                                try {
-                                    long triggerAtMillis=sdf.parse(reminderList.get(i)).getTime();
-                                    if(triggerAtMillis>=System.currentTimeMillis()){
-                                        Intent intent = new Intent(getApplicationContext(), AlarmService.class);
-                                        intent.setAction(AlarmService.ACTION_ALARM);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        PendingIntent pi = PendingIntent.getService(getApplicationContext(),request++,intent,0);
-                                        AlarmManager manager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                                        int type = AlarmManager.RTC_WAKEUP;
-                                        manager.setExact(type,triggerAtMillis, pi);
-                                    }
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                    }
-                });
-    }
-
-    */
 }
