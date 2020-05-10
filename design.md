@@ -16,10 +16,8 @@
   * Use databinding to update UI when the data is changed.
   * Use service to send a notification when user uses the note reminder function. 
   * Use Google map to show the user's location and the classroom's location.
-  * 
+
 * Any lessons learned? E.g., what would you do differently next time?
   * Designing the reasonable and effective data structure is really important.
-  * 
-  * 
-  * 
-  * 
+  * Make more use of threads.
+  * Read and study more about the offical documents.
