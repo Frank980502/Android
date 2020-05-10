@@ -7,5 +7,5 @@ This application based on actual needs, and the Android operating system, using 
 * 2
 * 3
 ## More information
-* Technical Design
+* [Technical Design](https://github.com/Frank980502/Group16/blob/master/design.md)
 * [Navigation structure](https://github.com/Frank980502/Group16/blob/master/structure.md)
