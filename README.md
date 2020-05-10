@@ -7,3 +7,5 @@ This application based on actual needs, and the Android operating system, using 
 * 2
 * 3
 ## More information
+* Technical Design
+* Navigation structure
