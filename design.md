@@ -15,7 +15,7 @@
   * Use ViewPager to contain 5 fragments, from Monday to Friday, and add PagerTabStrip to show the title.
   * Use databinding to update UI when the data is changed.
   * Use service to send a notification when user uses the note reminder function. 
-  * Use Google map to show the user's location and the classroom's location.
+  * Use Google map to show the user's location and the classroom's location. (After accepting permission for the first time, there may be no marks on the map and you can go back and try again)
 
 * Any lessons learned? E.g., what would you do differently next time?
   * Designing the reasonable and effective data structure is really important.
