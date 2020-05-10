@@ -8,4 +8,4 @@ This application based on actual needs, and the Android operating system, using 
 * 3
 ## More information
 * Technical Design
-* Navigation structure
+* [Navigation structure](https://github.com/Frank980502/Group16/blob/master/structure.md)
