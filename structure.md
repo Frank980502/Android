@@ -10,22 +10,22 @@
 
 ### Instruction
 * Profile
-Briefly introduce basic information.
+  * Briefly introduce basic information.
 
 * Timetable
-Show module information.
-Click an item to check the details, edit and save the information.
-Long press an item to display the options for deletion and map.
-The map can mark the user’s location and the building location.
-Floating button can judge whether the module has conflicts in one day.
+  * Show module information.
+  * Click an item to check the details, edit and save the information.
+  * Long press an item to display the options for deletion and map.
+  * The map can mark the user’s location and the building location.
+  * Floating button can judge whether the module has conflicts in one day.
 
 * Module
-Students can add, delete and check the modules. Timetable will update after the module is updated.
+  * Students can add, delete and check the modules. Timetable will update after the module is updated.
 
 * Note
-Click the Add button to add a note.
-Click a note item to edit the note, you can set the reminder time, you will receive a notification when the reminder time arrives.
-Long press a note item to delete the note.
+  * Click the Add button to add a note.
+  * Click a note item to edit the note, you can set the reminder time, you will receive a notification when the reminder time arrives.
+  * Long press a note item to delete the note.
 
 * Log out
-User logs out and returns to the login page.
+  * User logs out and returns to the login page.
